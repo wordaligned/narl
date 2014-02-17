@@ -1,7 +1,4 @@
-CLANGINC=-Id:/bin/mingw64/include/c++/4.8.1 -Id:/bin/mingw64/include/c++/4.8.1/x86_64-w64-mingw32 -pedantic 
-#-fsyntax-only
-# CLANGINC=-Ic:/bin/gcc/mingw/include/c++/4.8.1 -Ic:/bin/gcc/mingw/include/c++/4.8.1/x86_64-w64-mingw32 -pedantic -fsyntax-only
-INCLUDE=$(CLANGINC) -Inarl -I../externals/catch/single_include
+INCLUDE=-Inarl -I../../Catch/single_include
 OBJDIR=tmp
 SRCDIR=tests/testnarl
 
@@ -27,9 +24,9 @@ OBJS=	$(OBJDIR)/testnarl.oclang \
 		$(OBJDIR)/test_transforming_range.oclang \
 		$(OBJDIR)/test_unioning_range.oclang \
 		$(OBJDIR)/test_zipped_range.oclang \
-		$(OBJDIR)/narl_stl.oclang \
+		$(OBJDIR)/narl_stl.oclang
 
-CPPFLAGS=-std=c++11 -Wall -Wextra -Wpedantic
+CPPFLAGS=-std=c++11 -stdlib=libc++ -Wall -Wextra -Wpedantic
 CC=clang++ 
 
 testnarlclang.exe: $(OBJS)

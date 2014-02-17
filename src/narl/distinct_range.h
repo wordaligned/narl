@@ -1,6 +1,7 @@
 #pragma once
 
 #include "range_factory.h"
+#include <functional>
 
 
 namespace narl
